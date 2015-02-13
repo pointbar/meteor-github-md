@@ -1,10 +1,12 @@
 Package.describe({
-  summary: "A package to retrieve markdown ressources in a github repository",
+  name: 'pntbr:github-md',
+  summary: "A basic package to retrieve markdown ressources in a github repository",
   version: "0.0.2",
-  git: ""
+  git: "https://github.com/pointbar/meteor-github-md.git"
 });
 
 Package.onUse(function (api, where) {
+  api.versionsFrom('1.0.3.1');
   api.use(['http', 'mrt:github'], 'server');
 
   api.add_files([
