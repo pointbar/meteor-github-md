@@ -7,7 +7,7 @@ Package.describe({
 
 Package.onUse(function (api, where) {
   api.versionsFrom('1.0.3.1');
-  api.use(['http', 'mrt:github'], 'server');
+  api.use(['http'], 'server');
 
   api.add_files([
     'lib/server/github-key.js',
