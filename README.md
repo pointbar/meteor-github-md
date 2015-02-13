@@ -40,7 +40,7 @@ true
   "_links": {
   "git": "https://api.github.com/repos/pointbar/meteor-github-md/git/blobs/3d21ec53a331a6f037a91c368710b99387d012c1",
   "self": "https://api.github.com/repos//pointbar/meteor-github-md/contents/README.md",
-  "html": "https://github.com//pointbar/meteor-github-md/blob/master/README.md"
+  "html": " https://github.com/pointbar/meteor-github-md/blob/master/README.md"
   }
 }
 
@@ -72,4 +72,6 @@ And place the key/secret inside :
 KEY = '?client_id=xxxx&client_secret=yyyy';
 ```
 ## Contact
+
+> http://scopyleft.fr
 
