@@ -1,7 +1,7 @@
 Package.describe({
   name: 'pntbr:github-md',
   summary: "A basic package to retrieve markdown ressources in a github repository",
-  version: "0.0.2",
+  version: "0.0.3",
   git: "https://github.com/pointbar/meteor-github-md.git"
 });
 
