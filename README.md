@@ -64,12 +64,12 @@ The module support the [OAuth2 Key/Secret mode](https://developer.github.com/v3/
 You can add a file ignore by git :
 
 ```sh
-$ touch lib/server/github-key.js
+$ touch server/github-key.js
 ```
 
 And place the key/secret inside :
 ```js
-KEY = '?client_id=xxxx&client_secret=yyyy';
+github_md.key = '?client_id=xxxx&client_secret=yyyy';
 ```
 ## Contact
 
