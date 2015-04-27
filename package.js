@@ -14,6 +14,6 @@ Package.onUse(function(api) {
 });
 
 Package.onTest(function(api) {
-  api.use(['github-md', 'tinytest', 'http'], 'client');
+  api.use(['pntbr:github-md', 'tinytest', 'http'], 'client');
   api.addFiles('github-md-tests.js', 'client');
 });
