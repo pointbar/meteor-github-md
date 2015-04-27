@@ -1,6 +1,6 @@
 # meteor-github-md
 
-A basic module to load ressources from github
+With this lib you can use Github as a content editor with git powers and Github benefits. Please let me know your usage.
 
 ## Installation
 
@@ -10,68 +10,58 @@ $ meteor add pntbr:github-md
 
 ## How to use
 
-First you can create a github repo :
+First you must create a github repository :
 
-```sh
-$ meteor shell
+1. open a console in your navigator
 
-> repo = new Repo('pointbar', 'meteor-github-md');
+```javascript
+> repo = new GhRepo('daktary', 'contribs', 'gh-pages');
 ```
 
-and play with his methods :
+In order: *account*, *repo*, *branch (default: master)*
 
-```sh
-> repo.isAble
-true
+2. Get a ressource
 
-> repo.getFile('', 'README.md')
-
-{
-  "type": "file",
-  "encoding": "base64",
-  "size": 5362,
-  "name": "README.md",
-  "path": "README.md",
-  "content": "encoded content ...",
-  "sha": "3d21ec53a331a6f037a91c368710b99387d012c1",
-  "url": "https://api.github.com/repos/pointbar/meteor-github-md/contents/README.md",
-  "git_url": "https://api.github.com/repos//meteor-github-md/git/blobs/3d21ec53a331a6f037a91c368710b99387d012c1",
-  "html_url": "https://github.com/pointbar/meteor-github-md/blob/master/README.md",
-  "_links": {
-  "git": "https://api.github.com/repos/pointbar/meteor-github-md/git/blobs/3d21ec53a331a6f037a91c368710b99387d012c1",
-  "self": "https://api.github.com/repos//pointbar/meteor-github-md/contents/README.md",
-  "html": " https://github.com/pointbar/meteor-github-md/blob/master/README.md"
-  }
-}
-
-> dataInBase64 = repo.getFile('', 'README.md').data.content
-
-> new Buffer(dataInBase64, 'base64').toString()
-data
-```
-
-```js
-repo = new Repo('pointbar', 'repo');
-repo.isAble; // true if I can contact the repo
-repo.getFile(folder, filename); // return a github json data file
-repo.getFileList(folder); // return a github json list files
+```javascript
+> repo.getCleanContent("walace.md", function (content) { console.log("content", content); });
 ```
 
 ## Github authentification
 
-The module support the [OAuth2 Key/Secret mode](https://developer.github.com/v3/#oauth2-keysecret)
+The module support the [OAuth2 Key/Secret mode](https://developer.github.com/v3/#oauth2-keysecret) to understand.
 
-You can add a file ignore by git :
+You can add a file :
 
 ```sh
-$ touch server/github-key.js
+$ touch client/gh-keys.json
+$ echo client/gh-keys.json >> .gitignore
 ```
 
-And place the key/secret inside :
-```js
-github_md.key = '?client_id=xxxx&client_secret=yyyy';
+Place the key/secret inside :
+
+```json
+{
+  "id": "4a39xxxxxx546",
+  "secret": "3cfbxxxxxxf60"
+}
 ```
+
+## Contribute
+
+Many ways to contribute:
+
+* submit an issue when you find a bug
+* suggest new ideas
+* fork this repo and implement your features
+* improve the code or demo
+* find typos
+* letting me know how you use it
+
+## License
+
+MIT
+
 ## Contact
 
+> stephane@scopyleft.fr
 > http://scopyleft.fr
-

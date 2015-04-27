@@ -1,23 +1,19 @@
 Package.describe({
   name: 'pntbr:github-md',
-  summary: "A basic package to retrieve markdown ressources in a github repository",
-  version: "0.0.6",
-  git: "https://github.com/pointbar/meteor-github-md.git"
+  version: '0.1.0',
+  summary: 'Use Github API to get markdown files',
+  git: 'https://github.com/pointbar/meteor-github-md',
+  documentation: 'README.md'
 });
 
-Package.onUse(function (api, where) {
-  api.versionsFrom('1.0.3.1');
-  api.use(['http'], 'server');
-
-  api.add_files('lib/server/github.js', 'server');
-
-  api.export(['Repo', 'github_md']);
+Package.onUse(function(api) {
+  api.versionsFrom('1.1.0.2');
+  api.use('http', 'client');
+  api.addFiles('github-md.js', 'client');
+  api.export('GhRepo', 'client');
 });
 
-Package.on_test(function(api) {
-  api.add_files([
-    'lib/server/github.js'
-  ], 'server');
-  api.add_files('test_github-md.js', 'server');
-  api.use(['tinytest', 'test-helpers', 'http'], 'server');
+Package.onTest(function(api) {
+  api.use(['github-md', 'tinytest', 'http'], 'client');
+  api.addFiles('github-md-tests.js', 'client');
 });
